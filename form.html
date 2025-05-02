@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+
+
+<form action="/action_page.php" method="post">
+  Name:<input type="text" name="fname" required>
+  <input type="password" id="password" required>
+<label>password</label>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+function validateEmail(email) {
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+return emailPattern.test(email);
+}
+
+function validate() {
+const email = document.getElementById("email").value;
+const result = document.getElementById("result");
+if (validateEmail(email)) {
+result.textContent = email + " is valid";
+result.style.color = "blue";
+} else {
+result.textContent = email + " is not valid";
+result.style.color = "red";
+}
+return false;
+}
+</script>
+
+<form onsubmit="return validate()">
+<p>Enter an email address:</p>
+<input type="text" id="email">
+<button type="submit">Validate</button>
+
+
+</form>
+<div id="result"></div>
+
+</body>
+</html>

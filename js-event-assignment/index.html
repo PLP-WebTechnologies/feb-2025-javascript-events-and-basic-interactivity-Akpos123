@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Mr.X">
+<meta name="description" content="A better place to learn computer science">
+<title>GeeksforGeeks</title>
+
+<script src= "script.js"></script>
+</head>
+<body>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+
+
+<h2>JavaScript addEventListener()</h2>
+
+<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+<button id="myBtn">mouseover</button>
+
+<p id="demo"></p>
+
+
+<!-- Click button to Change text color to blue-->
+
+<button id="toBlue">Blue</button>
+
+<div>
+    <p id="output_text">Click the button to change the color.</p>
+</div>
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+  document.getElementById("toBlue").onclick = function () {
+    document.getElementById("output_text").style.color = 'blue';
+  }
+
+
+
+  
+</script>
+</body>
+<h1>GeeksforGeeks</h1>
+<p>A computer science portal for geeks</p>
+</body>
+</html>
